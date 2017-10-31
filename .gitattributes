@@ -1,0 +1,9 @@
+35.png filter=lfs diff=lfs merge=lfs -text
+59.png filter=lfs diff=lfs merge=lfs -text
+80.png filter=lfs diff=lfs merge=lfs -text
+86.png filter=lfs diff=lfs merge=lfs -text
+input1.bmp filter=lfs diff=lfs merge=lfs -text
+input2.bmp filter=lfs diff=lfs merge=lfs -text
+input3.bmp filter=lfs diff=lfs merge=lfs -text
+input4.bmp filter=lfs diff=lfs merge=lfs -text
+input5.bmp filter=lfs diff=lfs merge=lfs -text
