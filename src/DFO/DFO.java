@@ -1,3 +1,5 @@
+// ELITIST APPROACH (Keep the Best into consideration, instead of just the neighbours)
+
 package DFO;
 
 import processing.core.PApplet;
@@ -36,7 +38,6 @@ public class DFO extends PApplet {
 	int goalX, goalY;
 	public void draw() 
 	{
-		
 		smooth();
 
 		// remove the visuals of the previous iteration 
@@ -87,8 +88,9 @@ public class DFO extends PApplet {
 		//if (Global.evalCount < Global.FE_allowed) 
 		{
 			// EVALUATION Phase
-			for (int i = 0; i < Global.popSize; i++)
+			for (int i = 0; i < Global.popSize; i++){
 				Global.fly[i].setFitness(utils.evaluate(Global.fly[i].getPos()));
+			}
 
 			utils.findBestFly();
 
@@ -118,8 +120,8 @@ public class DFO extends PApplet {
 				double[] temp = new double[Global.dim];
 				for (int d = 0; d < Global.dim; d++) {
 					temp[d] = Global.fly[chosen].getPos(d) + 
-									   random(1) * (Global.fly[chosen].getPos(d) - Global.fly[i].getPos(d));// local nei
-									   //random(1) * (Global.fly[Global.bestIndex].getPos(d) - Global.fly[i].getPos(d));// FINAL
+									   random(1) * (Global.fly[Global.bestIndex].getPos(d) - Global.fly[i].getPos(d));// local nei
+									   //random(1) * (Global.fly[chosen].getPos(d) - Global.fly[i].getPos(d));// FINAL
 
 					// disturbance mechanism
 					if (random(1) < Global.dt)

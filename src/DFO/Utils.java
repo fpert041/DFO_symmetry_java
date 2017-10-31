@@ -143,22 +143,23 @@ public class Utils {
 	    int sum1 = 0;
 	    // Calculate the value of sum1 here
 	    //Global.ss
-	    for(int i =0; i<rad; i++)
+	    for(int i = 0; i<rad; i++)
 	    	for(int j=0; j<rad; j++){
-	    		double[] newA = {torus(x1+i), torus(y1+j)};
+	    		double[] newA = { torus(x1+i), torus(y1+j)};
 	    		sum1 += brightness(newA.clone());
 	    	}
 	    
 	    int sum2 = 0;
 	    // Calculate the value of sum2 here
 	    // ...
-	    for(int i =0; i<rad; i++)
+	    for(int i = 0; i<rad; i++)
 	    	for(int j=0; j<rad; j++){
 	    		double[] newA = {torus(x2-i), torus(y2-j)};
 	    		sum2 += brightness(newA.clone());
 	    	}
 	    
 	    a = Math.abs( sum1 - sum2 );
+	    
 		
 		Global.funcName = "Symmetery";
 		return a;				
@@ -180,7 +181,7 @@ public class Utils {
 	public double brightness(double[] p) {
 		double a = 0;
 		a = 255 - Global.ss[(int)p[0]][(int)p[1]];
-		System.out.println(a);
+		//System.out.println(a);
 		Global.funcName = "Brightness";
 		return a;
 	}
